@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mis 3 años Rodrigo Edmundo 🚜">
     <meta property="og:description" content="¡Estás cordialmente invitado a celebrar mis 3 añitos en mi granja de ensueño! Pulsa aquí para ver los detalles.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/regina1503/Mis-3-a-os-Rodrigo-/main/WhatsApp%20Image%202026-07-03%20at%205.30.51%20PM.jpeg">
+    <meta property="og:image" content="https://raw.githubusercontent.com/INVITACIONESMOMENTOSENCANTADOS/Mis-3-a-os-Rodrigo-/main/WhatsApp%20Image%202026-07-03%20at%205.30.51%20PM.jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mis 3 años Rodrigo Edmundo 🚜">
     <meta name="twitter:description" content="¡Estás cordialmente invitado a celebrar mis 3 añitos en mi granja de ensueño!">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/regina1503/Mis-3-a-os-Rodrigo-/main/WhatsApp%20Image%202026-07-03%20at%205.30.51%20PM.jpeg">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/INVITACIONESMOMENTOSENCANTADOS/Mis-3-a-os-Rodrigo-/main/WhatsApp%20Image%202026-07-03%20at%205.30.51%20PM.jpeg">
 
     <!-- Tailwind CSS para diseño fluido y moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -159,7 +159,7 @@
             
             <!-- Audio oculto con música agradable de flauta / infantil country sutil -->
             <audio id="bg-music" loop preload="auto">
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+                <source src="https://raw.githubusercontent.com/INVITACIONESMOMENTOSENCANTADOS/Mis-3-a-os-Rodrigo-/main/Alboroto%20en%20La%20Granja%20-%20La%20Granja%20de%20Zen%C3%B3n%205%20_%20El%20Reino%20Infantil.mp3" type="audio/mpeg">
             </audio>
         </section>
 
@@ -176,8 +176,8 @@
 
             <div class="absolute inset-0 z-30 flex flex-col items-center pointer-events-none">
                 
-                <!-- BOTÓN 1: VER UBICACIÓN (Posicionado óptimamente a un 30% de altura) -->
-                <div class="absolute w-full max-w-xs px-6 pointer-events-auto" style="top: 30%; left: 50%; transform: translateX(-50%);">
+                <!-- BOTÓN 1: VER UBICACIÓN (Posicionado óptimamente a un 50% de altura) -->
+                <div class="absolute w-full max-w-xs px-6 pointer-events-auto" style="top: 50%; left: 50%; transform: translateX(-50%);">
                     <a href="https://maps.app.goo.gl/gPCQ4fAAQepzSCsB9" target="_blank" 
                        class="w-full bg-gradient-to-r from-sky-500 to-blue-400 text-white text-center py-4 rounded-2xl font-bold text-sm shadow-lg hover:from-sky-600 hover:to-blue-500 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-3 border-b-4 border-sky-600">
                         <i class="fa-solid fa-map-location-dot text-lg text-white animate-pulse"></i>
@@ -253,6 +253,9 @@
                 colors: ['#38bdf8', '#bae6fd', '#fef08a', '#ffffff', '#a7f3d0']
             });
 
+            // Establecer el inicio de la música en el segundo 6 de forma segura
+            audio.currentTime = 6;
+
             // Reproducir música respetando la interacción del usuario
             audio.play().then(() => {
                 document.getElementById('audio-visualizer').classList.remove('paused-animation');
@@ -290,6 +293,10 @@
             const icon = document.getElementById('music-control-icon');
             
             if (audio.paused) {
+                // Si la música está antes del segundo 6, asegurar que inicie allí
+                if (audio.currentTime < 6) {
+                    audio.currentTime = 6;
+                }
                 audio.play();
                 visualizer.classList.remove('paused-animation');
                 icon.className = 'fa-solid fa-music text-white animate-pulse';
@@ -302,3 +309,5 @@
     </script>
 </body>
 </html>
+```
+eof
